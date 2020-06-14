@@ -1,0 +1,39 @@
+<div class="qm-card-div-style">
+  <mat-card class="qm-card-style">
+
+    <div  class="space-between">
+      <div>
+        <select (change) = "onChangeQuantity($event.target.value)" class="qm-value-selector">
+          <option *ngFor="let quantitytypes of quantityTypes">
+            {{quantitytypes}}
+          </option >
+        </select >
+      </div>
+
+      <div class="qm-value-space">
+        <div class="qm-input-div">
+          <input  class = "qm-input-style" [(ngModel)]= "unitObj.value">
+          <select (change) = "onToUnitChange($event.target.value)" class = "qm-unit-unit-selector">
+            <option *ngFor = "let unittypes of unitTypes">
+              {{unittypes}}
+            </option>
+          </select>
+        </div>
+        <div class = "equal-symbol-style">
+          <h1>=</h1>
+        </div>
+        <div class = "qm-input-div">
+          <input class = "qm-input-style" [ngModel]="result">
+          <select (change) = "onFromUnitChange($event.target.value)" class="qm-unit-unit-selector">
+            <option *ngFor="let unittypes of unitTypes">
+              {{unittypes}}
+            </option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+
+  </mat-card>
+
+</div>
